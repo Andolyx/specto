@@ -52,7 +52,7 @@ export interface FollowedStreamState {
   sortField: FollowedStreamSortField;
 }
 
-export type FollowedUserSortField = "followedAt" | "login";
+export type FollowedUserSortField = "login";
 
 export interface FollowedUserState {
   sortDirection: SortDirection;
@@ -100,6 +100,7 @@ export interface HelixChannelSearchResult {
   isLive: boolean;
   title: string;
   thumbnailUrl: string;
+  followersCount?: number;
 }
 
 export interface HelixClip {

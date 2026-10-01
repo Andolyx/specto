@@ -60,7 +60,14 @@ function ChannelCard(props: ChannelCardProps) {
         title={<ChannelName login={channel.broadcasterLogin} name={channel.displayName} />}
         subtitle={
           <Tooltip content={channel.title}>
-            <span>{channel.title || <i>{t("detailText_noTitle")}</i>}</span>
+            <span>
+              {channel.title ||
+                (channel.followersCount != null && !channel.isLive ? (
+                  t("detailText_followerCount", channel.followersCount.toLocaleString())
+                ) : (
+                  <i>{t("detailText_noTitle")}</i>
+                ))}
+            </span>
           </Tooltip>
         }
         leftOrnament={
@@ -69,9 +76,11 @@ function ChannelCard(props: ChannelCardProps) {
           </Thumbnail>
         }
       >
-        <CategoryName title={channel.gameName}>
-          {channel.gameName || <i>{t("detailText_noCategory")}</i>}
-        </CategoryName>
+        {(channel.isLive || channel.gameName) && (
+          <CategoryName title={channel.gameName}>
+            {channel.gameName || <i>{t("detailText_noCategory")}</i>}
+          </CategoryName>
+        )}
 
         <ChannelDropdown channel={channel}>
           <StyledDropdownButton />

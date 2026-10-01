@@ -11,7 +11,7 @@ const TabList = styled.div`
 `;
 
 const Tab = styled(NavLink)`
-  ${tw`border-b border-neutral-200 dark:border-neutral-800 flex-1 py-3 relative text-center text-neutral-600 dark:text-neutral-400 [&.active]:(border-purple-500 font-medium text-black dark:text-white)!`}
+  ${tw`border-b border-neutral-200 dark:border-neutral-800 flex-1 py-3 relative text-center text-neutral-600 dark:text-neutral-400 [&.active]:(border-brand-500 font-medium text-black dark:text-white)!`}
 `;
 
 export interface OutletContext {

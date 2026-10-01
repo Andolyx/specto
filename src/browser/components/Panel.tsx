@@ -11,7 +11,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.div`
-  ${tw`flex-1 font-bold text-purple-500 text-xl`}
+  ${tw`flex-1 font-bold text-brand-700 dark:text-brand-500 text-xl`}
 `;
 
 const CloseButton = styled.button`

@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Загрузить ещё"
   },
-  "buttonText_login": {
-    "message": "Войти в Twitch"
-  },
   "buttonText_reloadExtension": {
     "message": "Перезагрузить расширение"
   },
@@ -105,10 +102,10 @@
     "message": "Видео не найдены"
   },
   "extensionDescription": {
-    "message": "Пухлый компаньон сохраняющий актуальными ваши ощущения от Twitch"
+    "message": "Пухлый компаньон сохраняющий актуальными ваши ощущения от Kick"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch компаньон"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "Пример:$1"
@@ -163,9 +160,6 @@
   },
   "notificationContextMessage_extensionUpdated": {
     "message": "Просмотреть изменения"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Ваш токен доступа к Twitch просрочен, пожалуйста пере-авторизуйтесь для получения нового."
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumbo обновлён до версии $1."

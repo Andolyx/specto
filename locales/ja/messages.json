@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "もっと読み込む"
   },
-  "buttonText_login": {
-    "message": "Twitchでログイン"
-  },
   "buttonText_reloadExtension": {
     "message": "拡張機能のリロード"
   },
@@ -105,10 +102,10 @@
     "message": "ビデオが見つかりません"
   },
   "extensionDescription": {
-    "message": "ふくれたコンパニオンがTwitch体験をアップデート"
+    "message": "ふくれたコンパニオンがKick体験をアップデート"
   },
   "extensionName": {
-    "message": "Gumbo: Twitchコンパニオン"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "例：$1"
@@ -163,9 +160,6 @@
   },
   "notificationContextMessage_extensionUpdated": {
     "message": "クリックして変更を確認する"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Twitchのアクセストークンが期限切れです。再認証して新しいものを入手してください。"
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumboがバージョン$1にアップデートされました。"

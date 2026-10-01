@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Mehr laden"
   },
-  "buttonText_login": {
-    "message": "Mit Twitch einloggen"
-  },
   "buttonText_reloadExtension": {
     "message": "Erweiterung neu laden"
   },
@@ -108,7 +105,7 @@
     "message": "Dein treuer Begleiter, der dich über Live-Streams auf dem Laufenden hält."
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion für Live-Streams"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "Beispiel: $1"
@@ -163,9 +160,6 @@
   },
   "notificationContextMessage_extensionUpdated": {
     "message": "Klicken für Änderungen"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Dein Twitch-Zugriffstoken ist abgelaufen. Bitte neu autorisieren."
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumbo wurde auf Version $1 aktualisiert."

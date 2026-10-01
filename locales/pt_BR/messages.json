@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Carregar Mais"
   },
-  "buttonText_login": {
-    "message": "Entrar com Twitch"
-  },
   "buttonText_reloadExtension": {
     "message": "Recarregar Extensão"
   },
@@ -105,10 +102,10 @@
     "message": "Nenhum vídeo encontrado"
   },
   "extensionDescription": {
-    "message": "Companheiro confiável que mantém sua experiência no Twitch sempre atualizada"
+    "message": "Companheiro confiável que mantém sua experiência no Kick sempre atualizada"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "Exemplo: $1"
@@ -163,9 +160,6 @@
   },
   "notificationContextMessage_extensionUpdated": {
     "message": "Clique para ver as alterações"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Seu token de acesso do Twitch expirou, por favor faça uma nova autorização."
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumbo foi atualizado para a versão $1."

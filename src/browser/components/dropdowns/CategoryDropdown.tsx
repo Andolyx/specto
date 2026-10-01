@@ -27,7 +27,7 @@ function CategoryDropdown(props: CategoryDropdownProps) {
       {
         type: "normal",
         title: t("buttonText_viewOn", "Twitch"),
-        onClick: (event) => openUrl(`https://twitch.tv/directory/game/${category.name}`, event),
+        onClick: (event) => openUrl(`https://kick.com/category/${category.id}`, event),
       },
       {
         type: "normal",

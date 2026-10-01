@@ -33,8 +33,8 @@ const Wrapper = styled.button<WrapperProps>`
 
   ${(props) => {
     switch (props.color) {
-      case "purple":
-        return tw`bg-purple-500 text-white hover:bg-purple-400 active:bg-purple-600 disabled:bg-purple-500!`;
+      case "brand":
+        return tw`bg-brand-500 text-black hover:bg-brand-400 active:bg-brand-600 disabled:bg-brand-500!`;
 
       case "red":
         return tw`bg-red-500 text-white hover:bg-red-400 active:bg-red-600 disabled:bg-red-500!`;

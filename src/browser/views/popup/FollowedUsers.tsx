@@ -1,6 +1,6 @@
 import { find, map, orderBy } from "es-toolkit/compat";
 import { useMemo, useState } from "react";
-import tw, { styled } from "twin.macro";
+import { styled } from "twin.macro";
 
 import { isRerunStream, t } from "~/common/helpers";
 import { FollowedUserState, HelixUser } from "~/common/types";
@@ -23,12 +23,7 @@ import Splash from "~/browser/components/Splash";
 
 const Collection = styled.div``;
 
-const FollowingSince = styled.div`
-  ${tw`truncate`}
-`;
-
 interface FormattedUser extends HelixUser {
-  followedAt: Date;
   isRerun: boolean;
   isLive: boolean;
 }
@@ -66,14 +61,9 @@ function ChildComponent(props: ChildComponentProps) {
       const isLive = !!stream;
 
       if (matchesFields && [isLive, null].includes(followedUserState.status)) {
-        const channel = find(followedChannels, {
-          broadcasterId: user.id,
-        });
-
         items.push({
           ...user,
 
-          followedAt: new Date(channel?.followedAt ?? 0),
           isRerun: isRerunStream(stream),
           isLive,
         });
@@ -105,11 +95,7 @@ function ChildComponent(props: ChildComponentProps) {
               isRerun={item.isRerun}
               isLive={item.isLive}
               user={item}
-            >
-              <FollowingSince>
-                {t("detailText_followingSince", item.followedAt.toLocaleString())}
-              </FollowingSince>
-            </UserCard>
+            />
           ))}
         </Collection>
       )}
@@ -155,10 +141,6 @@ export function Component() {
               {
                 value: "login",
                 label: t("optionValue_sort_name"),
-              },
-              {
-                value: "followedAt",
-                label: t("optionValue_sort_followedAt"),
               },
             ],
           },

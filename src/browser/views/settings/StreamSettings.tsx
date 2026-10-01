@@ -47,9 +47,6 @@ export function Component() {
         </FormField>
       </Section>
       <Section>
-        <StyledSwitch {...register("streams.withReruns")}>
-          {t("inputLabel_showRerunsInFollowedStreams")}
-        </StyledSwitch>
         <StyledSwitch {...register("streams.withFilters")}>
           {t("inputLabel_filterStreamsByLanguage")}
         </StyledSwitch>

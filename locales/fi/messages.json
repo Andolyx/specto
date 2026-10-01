@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Lataa lisää"
   },
-  "buttonText_login": {
-    "message": "Kirjaudu sisään Twitchillä"
-  },
   "buttonText_reloadExtension": {
     "message": "Lataa laajennus uudelleen"
   },
@@ -105,10 +102,10 @@
     "message": "Videoita ei löytynyt"
   },
   "extensionDescription": {
-    "message": "Leppoinen Twitch apurisi, joka pitää sinut ajan tasalla"
+    "message": "Leppoinen Kick apurisi, joka pitää sinut ajan tasalla"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Apuri"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "Esimerkki: $1"
@@ -163,9 +160,6 @@
   },
   "notificationContextMessage_extensionUpdated": {
     "message": "Klikkaa nähdäksesi muutokset"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Twitch pääsy tokeni on vanhentunut. Uudelleen valtuuta uusiaksesi sen."
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumbo päivitetty versioon $1."
