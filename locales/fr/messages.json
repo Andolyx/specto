@@ -51,10 +51,10 @@
     "message": "Confirmer la suppression"
   },
   "confirmTitle_reload": {
-    "message": "Oh-oh, Gumbo ne répond plus !"
+    "message": "Oh-oh, Specto ne répond plus !"
   },
   "confirmTitle_reset": {
-    "message": "Vous êtes sur le point de réinitialiser Gumbo !"
+    "message": "Vous êtes sur le point de réinitialiser Specto !"
   },
   "detailText_followingSince": {
     "message": "Suivi depuis $1"
@@ -105,7 +105,7 @@
     "message": "Compagnon gonflé vous tenant à jour sur votre expérience Kick"
   },
   "extensionName": {
-    "message": "Gumbo for Kick"
+    "message": "Specto"
   },
   "helpText_customAction_url": {
     "message": "Exemple : $1"
@@ -147,7 +147,7 @@
     "message": "Traduire"
   },
   "messageText_donate": {
-    "message": "<p>Gumbo est une extension gratuite qui ne collecte ni ne vend les données personnelles des utilisateurs.</p><p>Les dons, bien que facultatifs mais très appréciés, contribuent à soutenir mon travail et m'encouragent à offrir des produits de la meilleure qualité possible.</p><p>Merci de votre soutien !</p>"
+    "message": "<p>Specto est une extension gratuite qui ne collecte ni ne vend les données personnelles des utilisateurs.</p><p>Les dons, bien que facultatifs mais très appréciés, contribuent à soutenir mon travail et m'encouragent à offrir des produits de la meilleure qualité possible.</p><p>Merci de votre soutien !</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Commencez à taper pour rechercher des catégories"
@@ -162,7 +162,7 @@
     "message": "Cliquez pour voir les changements"
   },
   "notificationMessage_extensionUpdated": {
-    "message": "Gumbo a été mis à jour vers la version $1."
+    "message": "Specto a été mis à jour vers la version $1."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 est en ligne !"

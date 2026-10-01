@@ -54,10 +54,10 @@
     "message": "Confirm Deletion"
   },
   "confirmTitle_reload": {
-    "message": "Uh-oh, Gumbo is not responding anymore!"
+    "message": "Uh-oh, Specto is not responding anymore!"
   },
   "confirmTitle_reset": {
-    "message": "You are about to reset Gumbo!"
+    "message": "You are about to reset Specto!"
   },
   "detailText_followerCount": {
     "message": "$1 followers"
@@ -108,10 +108,10 @@
     "message": "No videos found"
   },
   "extensionDescription": {
-    "message": "Swollen companion keeping you updated on your Kick experience"
+    "message": "Your lookout for live streams on Kick"
   },
   "extensionName": {
-    "message": "Gumbo for Kick"
+    "message": "Specto"
   },
   "helpText_customAction_url": {
     "message": "Example: $1"
@@ -159,7 +159,7 @@
     "message": "Translate"
   },
   "messageText_donate": {
-    "message": "<p>Gumbo is a free extension that does not collect or sell personal user data.</p><p>Donations, although optional but greatly appreciated, help support my work and encourage me to offer the best quality products possible.</p><p>Thank you for your support!</p>"
+    "message": "<p>Specto is a free extension that does not collect or sell personal user data.</p><p>Donations, although optional but greatly appreciated, help support my work and encourage me to offer the best quality products possible.</p><p>Thank you for your support!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Start typing to search categories"
@@ -177,7 +177,7 @@
     "message": "Your Kick session expired, please log in on kick.com again."
   },
   "notificationMessage_extensionUpdated": {
-    "message": "Gumbo as been updated to version $1."
+    "message": "Specto as been updated to version $1."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 is online!"

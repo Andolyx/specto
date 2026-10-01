@@ -28,7 +28,7 @@ function CustomActionForm(props: CustomActionFormProps) {
   );
 
   const exampleUrl = useMemo(
-    () => template(value.url, { "{login}": "gumbo", "{id}": "42069" }),
+    () => template(value.url, { "{login}": "specto", "{id}": "42069" }),
     [value.url],
   );
 

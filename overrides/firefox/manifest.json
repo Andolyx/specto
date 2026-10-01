@@ -41,7 +41,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "gumbo-kick@andolyx",
+      "id": "specto@andolyx",
       "strict_min_version": "128.0"
     }
   },
