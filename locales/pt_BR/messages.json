@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Carregar Mais"
   },
-  "buttonText_login": {
-    "message": "Entrar com Twitch"
-  },
   "buttonText_reloadExtension": {
     "message": "Recarregar Extensão"
   },
@@ -54,10 +51,10 @@
     "message": "Confirmar exclusão"
   },
   "confirmTitle_reload": {
-    "message": "Uh-oh, Gumbo não está mais respondendo!"
+    "message": "Uh-oh, Specto não está mais respondendo!"
   },
   "confirmTitle_reset": {
-    "message": "Você está prestes a resetar a extensão Gumbo!"
+    "message": "Você está prestes a resetar a extensão Specto!"
   },
   "detailText_followingSince": {
     "message": "Seguindo desde $1"
@@ -105,10 +102,10 @@
     "message": "Nenhum vídeo encontrado"
   },
   "extensionDescription": {
-    "message": "Companheiro confiável que mantém sua experiência no Twitch sempre atualizada"
+    "message": "Companheiro confiável que mantém sua experiência no Kick sempre atualizada"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion"
+    "message": "Specto"
   },
   "helpText_customAction_url": {
     "message": "Exemplo: $1"
@@ -150,7 +147,7 @@
     "message": "Traduzir"
   },
   "messageText_donate": {
-    "message": "<p>Gumbo é uma extensão grátis que não coleta e não vende as informações pessoais dos usuários.</p><p>Doações, embora opcionais, são muito apreciadas, pois apoiam o meu trabalho e me encorajam a oferecer a melhor qualidade possível em meus produtos.</p><p>Obrigado por seu suporte!</p>"
+    "message": "<p>Specto é uma extensão grátis que não coleta e não vende as informações pessoais dos usuários.</p><p>Doações, embora opcionais, são muito apreciadas, pois apoiam o meu trabalho e me encorajam a oferecer a melhor qualidade possível em meus produtos.</p><p>Obrigado por seu suporte!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Comece digitando para buscar categorias"
@@ -164,11 +161,8 @@
   "notificationContextMessage_extensionUpdated": {
     "message": "Clique para ver as alterações"
   },
-  "notificationMessage_accessExpired": {
-    "message": "Seu token de acesso do Twitch expirou, por favor faça uma nova autorização."
-  },
   "notificationMessage_extensionUpdated": {
-    "message": "Gumbo foi atualizado para a versão $1."
+    "message": "Specto foi atualizado para a versão $1."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 está online!"

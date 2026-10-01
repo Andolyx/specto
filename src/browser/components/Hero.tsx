@@ -35,10 +35,11 @@ function Hero(props: HeroProps) {
       <StyledLogo />
       <StyledWordmark />
       <Author>
-        by{" "}
-        <a href="https://seldszar.fr" target="_blank" rel="noopener noreferrer">
-          Seldszar
-        </a>
+        based on{" "}
+        <a href="https://github.com/Seldszar/Gumbo" target="_blank" rel="noopener noreferrer">
+          Gumbo
+        </a>{" "}
+        by Seldszar
       </Author>
       <Description>{manifest.description}</Description>
     </Wrapper>

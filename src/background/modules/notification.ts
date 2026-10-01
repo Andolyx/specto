@@ -2,7 +2,7 @@ import { t } from "~/common/helpers";
 import { stores } from "~/common/stores";
 import { HelixStream } from "~/common/types";
 
-import { getUsersByIds } from "./twitch";
+import { getUsersByIds } from "./kick";
 
 export interface CreateNotificationOptions {
   iconUrl?: string;

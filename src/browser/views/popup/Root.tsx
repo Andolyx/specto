@@ -1,5 +1,5 @@
 import { css, Global } from "@emotion/react";
-import { IconBrandTwitch } from "@tabler/icons-react";
+import { IconBrandKick } from "@tabler/icons-react";
 import { useMemo } from "react";
 import { isRouteErrorResponse, Outlet, useRouteError } from "react-router";
 import { useSearchParam } from "react-use";
@@ -41,9 +41,9 @@ export function ChildComponent() {
         </Section>
         <Section>
           <Button
-            color="purple"
+            color="brand"
             onClick={() => sendRuntimeMessage("authorize")}
-            icon={<IconBrandTwitch size="1.5rem" strokeWidth={1.5} />}
+            icon={<IconBrandKick size="1.5rem" strokeWidth={1.5} />}
           >
             {t("buttonText_login")}
           </Button>

@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Załaduj więcej"
   },
-  "buttonText_login": {
-    "message": "Zaloguj za pomocą Twitch"
-  },
   "buttonText_reloadExtension": {
     "message": "Wczytaj ponownie rozszerzenie"
   },
@@ -54,10 +51,10 @@
     "message": "Potwierdź usunięcie"
   },
   "confirmTitle_reload": {
-    "message": "O cholibka, Gumbo nie odpowiada!"
+    "message": "O cholibka, Specto nie odpowiada!"
   },
   "confirmTitle_reset": {
-    "message": "Za chwilę zresetujesz Gumbo!"
+    "message": "Za chwilę zresetujesz Specto!"
   },
   "detailText_followingSince": {
     "message": "Obserwuje od $1"
@@ -105,10 +102,10 @@
     "message": "Nie znaleziono filmów"
   },
   "extensionDescription": {
-    "message": "Świetny towarzysz, dzięki któremu będziesz na bieżąco z Twitchem"
+    "message": "Świetny towarzysz, dzięki któremu będziesz na bieżąco z Kickem"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion"
+    "message": "Specto"
   },
   "helpText_customAction_url": {
     "message": "Przykład: $1"
@@ -150,7 +147,7 @@
     "message": "Przetłumacz"
   },
   "messageText_donate": {
-    "message": "<p>Gumbo to bezpłatne rozszerzenie, które nie gromadzi ani nie sprzedaje osobistych danych użytkownika.</p><p>Darowizny, chociaż opcjonalne, ale bardzo cenione, pomagają wesprzeć moją pracę i zachęcają mnie do oferowania produktów najlepszej możliwej jakości.</p><p>Dziękujemy za wsparcie!</p>"
+    "message": "<p>Specto to bezpłatne rozszerzenie, które nie gromadzi ani nie sprzedaje osobistych danych użytkownika.</p><p>Darowizny, chociaż opcjonalne, ale bardzo cenione, pomagają wesprzeć moją pracę i zachęcają mnie do oferowania produktów najlepszej możliwej jakości.</p><p>Dziękujemy za wsparcie!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Zacznij pisać, aby wyszukać kategorie"
@@ -164,11 +161,8 @@
   "notificationContextMessage_extensionUpdated": {
     "message": "Kliknij by zobaczyć zmiany"
   },
-  "notificationMessage_accessExpired": {
-    "message": "Twój token dostępu Twitch wygasł, proszę ponownie autoryzuj, aby otrzymać nowy."
-  },
   "notificationMessage_extensionUpdated": {
-    "message": "Gumbo został zaktualizowany do wersji $1."
+    "message": "Specto został zaktualizowany do wersji $1."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 jest online!"

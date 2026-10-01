@@ -25,7 +25,7 @@ export function Component() {
 
     const anchor = document.createElement("a");
 
-    anchor.setAttribute("download", `Gumbo-${Date.now()}.json`);
+    anchor.setAttribute("download", `Specto-${Date.now()}.json`);
     anchor.setAttribute("href", url);
     anchor.click();
 

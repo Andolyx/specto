@@ -1,70 +1,51 @@
-# <img src="public/icon-48.png" width="38" align="left" /> Gumbo
+# <img src="public/icon-48.png" width="38" align="left" /> Specto
 
-> Swollen companion keeping you updated on your Twitch experience
+> Your lookout for live streams on [Kick](https://kick.com). Based on [Gumbo](https://github.com/Seldszar/Gumbo) by Seldszar.
 
-Gumbo is a spiritual successor to Twitch Now, allowing you to access your Twitch experience outside the main ecosystem.
+*Specto* is Latin for "I watch."
 
-From its user interface, you can check your followed channels and track live streams, as well as discover the popular streams and categories of the moment, all with the ability to customize your experience through a multitude of preferences at your disposal.
+Check your followed Kick channels and live streams, browse popular streams and categories, search channels and categories, and get notified when a channel goes live or changes category — all from the browser toolbar.
 
-This extension also informs you when a channel goes online or changes category, with the possibility to choose the notifications you want.
+## How it works
 
-## Install
+Kick's [public API](https://docs.kick.com/) has no endpoint for a user's follows, and every token requires a client secret, which can't be shipped in an extension. Instead, this extension uses the private API that the kick.com website itself uses:
 
-[link-chrome]: https://chrome.google.com/webstore/detail/gumbo-twitch-companion/aalmjfpohaedoddkobnibokclgeefamn 'Version published on Chrome Web Store'
-[link-firefox]: https://addons.mozilla.org/firefox/addon/gumbo-twitch-companion 'Version published on Mozilla Add-ons'
+- **Sign in** happens on kick.com. The extension reads your `session_token` cookie and sends it as a bearer token, exactly like the site does. No password or API keys are stored by the extension.
+- **Log out** in the extension removes that cookie, which also signs you out of kick.com.
+- A [`declarativeNetRequest` rule](public/rules.json) sets `Referer: https://kick.com/` on the extension's requests to Kick.
 
-[<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome.svg" width="48" alt="Chrome" valign="middle">][link-chrome] [<img valign="middle" src="https://img.shields.io/chrome-web-store/v/aalmjfpohaedoddkobnibokclgeefamn.svg?label=%20">][link-chrome] also compatible with [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg" width="24" alt="Edge" valign="middle">][link-chrome] [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera.svg" width="24" alt="Opera" valign="middle">][link-chrome]
+All Kick calls live in [`src/background/modules/kick.ts`](src/background/modules/kick.ts), which maps Kick responses to the Helix-shaped types the UI was originally built around. Channels and categories are identified by their slug.
 
-[<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox.svg" width="48" alt="Firefox" valign="middle">][link-firefox] [<img valign="middle" src="https://img.shields.io/amo/v/gumbo-twitch-companion.svg?label=%20">][link-firefox]
+| Feature | Endpoint |
+| --- | --- |
+| Followed channels | `kick.com/api/v2/channels/followed` (authenticated) |
+| Stream details (uptime, thumbnail, category) | `kick.com/api/v2/channels/{slug}/livestream` |
+| Top streams, category streams | `web.kick.com/api/v1/livestreams` |
+| Top categories, category details | `kick.com/api/v1/subcategories` |
+| Category clips | `kick.com/api/v2/categories/{slug}/clips` |
+| Channel and category search | `kick.com/api/search` |
+| Users | `kick.com/api/v2/channels/{slug}` |
+| Current user | `kick.com/api/v1/user` (authenticated) |
 
-## Build
+### Caveats
 
-1. Create (or use) a [Twitch Application](https://dev.twitch.tv/console/apps).
+- These endpoints are undocumented and can change or be blocked (Kick sits behind Cloudflare) without notice.
+- The session cookie grants full account access; the extension only uses it for the requests above.
+- Not available on Kick, so removed: category videos, reruns, channel schedules, IGDB links, and the "followed since" date.
 
-2. Create a `.env` file in the root of your project with the above Twitch Application's Client ID:
+## Install (development)
 
-    ```
-    TWITCH_CLIENT_ID=tk0nbw3xavxi9eeor93rpsg6ppxtyd
-    ```
+1. Install the dependencies: `yarn install`
+2. Build for the desired platform:
+   - `yarn build:chrome`
+   - `yarn build:firefox`
+3. Load the `dist` folder:
+   - **Chrome / Edge / Brave:** `chrome://extensions` → enable *Developer mode* → *Load unpacked* → select `dist`.
+   - **Firefox (128+):** `about:debugging#/runtime/this-firefox` → *Load Temporary Add-on* → select `dist/manifest.json`.
+4. Log in on [kick.com](https://kick.com) in the same browser profile.
 
-3. Install the dependencies (`yarn install`) and build for the desired platform:
+Each CI run also uploads `chrome-artifact` and `firefox-artifact` builds.
 
-    - `yarn build:chrome` if you want to build for Google Chrome
-    - `yarn build:firefox` if you want to build for Mozilla Firefox
+## Credits
 
-## Contributing
-
-### Donating
-
-Gumbo is a free extension that does not collect or sell personal user data.
-
-Donations, although optional but greatly appreciated, help support my work and encourage me to offer the best quality products possible.
-
-If you'd like to help my initiative, please consider contributing using [PayPal](https://go.seldszar.fr/paypal) or [Coinbase](https://go.seldszar.fr/coinbase).
-
-### Translating
-
-You can help translate Gumbo by [registering on Weblate](https://hosted.weblate.org/accounts/register), and join the [translation project](https://hosted.weblate.org/projects/gumbo).
-
-## Frequently Asked Questions
-
-### Why does it break randomly?
-
-Gumbo can break randomly due to a bug coming from Chromium, which can put the extension in a state of limbo.
-This is a known issue, which is unfortunately in the hands of the Chromium team.
-
-- https://bugs.chromium.org/p/chromium/issues/detail?id=1271154
-
-### Are sound notifications supported?
-
-Not officially, Manifest V3 doesn't provide the ability to play audio from a service worker.
-Workarounds exist, but aren't worth the trouble.
-
-- https://bugs.chromium.org/p/chromium/issues/detail?id=1131236
-
-## License
-
-Copyright (c) 2022-present Alexandre Breteau
-
-This software is released under the terms of the MIT License.
-See the [LICENSE](LICENSE) file for further information.
+Gumbo is © Alexandre Breteau (Seldszar), released under the [MIT License](LICENSE). If you enjoy it, consider [supporting the original author](https://github.com/Seldszar/Gumbo#donating).

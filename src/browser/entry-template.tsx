@@ -44,7 +44,7 @@ const wrapper: EntryWrapper<ExoticComponent> = (Component) => {
         <Global
           styles={css`
             ::selection {
-              ${tw`bg-purple-500 text-white`}
+              ${tw`bg-brand-500 text-black`}
             }
 
             html,
@@ -64,10 +64,10 @@ const wrapper: EntryWrapper<ExoticComponent> = (Component) => {
               ${tw`absolute z-50`}
             }
 
-            .os-theme-gumbo {
-              --os-handle-bg-active: ${theme("colors.purple.600")};
-              --os-handle-bg-hover: ${theme("colors.purple.400")};
-              --os-handle-bg: ${theme("colors.purple.500")};
+            .os-theme-specto {
+              --os-handle-bg-active: ${theme("colors.brand.600")};
+              --os-handle-bg-hover: ${theme("colors.brand.400")};
+              --os-handle-bg: ${theme("colors.brand.500")};
               --os-handle-border-radius: ${theme("borderRadius.full")};
               --os-handle-interactive-area-offset: 3px;
               --os-padding-axis: 3px;

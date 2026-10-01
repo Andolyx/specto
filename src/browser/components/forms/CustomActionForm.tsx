@@ -28,7 +28,7 @@ function CustomActionForm(props: CustomActionFormProps) {
   );
 
   const exampleUrl = useMemo(
-    () => template(value.url, { "{login}": "gumbo", "{id}": "42069" }),
+    () => template(value.url, { "{login}": "specto", "{id}": "42069" }),
     [value.url],
   );
 
@@ -75,7 +75,7 @@ function CustomActionForm(props: CustomActionFormProps) {
         <Button type="button" color="transparent" onClick={() => props.onCancel()}>
           {t("buttonText_cancel")}
         </Button>
-        <Button color="purple" disabled={!isFormValid}>
+        <Button color="brand" disabled={!isFormValid}>
           {t("buttonText_submit")}
         </Button>
       </ActionList>

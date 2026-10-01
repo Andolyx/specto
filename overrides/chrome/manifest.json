@@ -4,14 +4,26 @@
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "version": "0.0.0",
-  "permissions": ["alarms", "notifications", "storage"],
-  "host_permissions": ["https://gumbo.seldszar.fr/*"],
+  "permissions": [
+    "alarms",
+    "cookies",
+    "declarativeNetRequestWithHostAccess",
+    "notifications",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://kick.com/*",
+    "https://*.kick.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
     "48": "icon-48.png",
-    "96": "icon-96.png"
+    "96": "icon-96.png",
+    "128": "icon-128.png"
   },
   "action": {
     "default_title": "__MSG_extensionName__",
@@ -27,5 +39,14 @@
   "options_ui": {
     "page": "settings.html",
     "open_in_tab": true
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "kick",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
   }
 }

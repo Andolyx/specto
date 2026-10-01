@@ -9,13 +9,13 @@ export function useClickAction(userLogin: string, options?: UseStoreOptions): st
 
   switch (settings.general.clickAction) {
     case ClickAction.Popout:
-      return `https://twitch.tv/${userLogin}/popout`;
+      return `https://player.kick.com/${userLogin}`;
 
     case ClickAction.OpenChat:
-      return `https://twitch.tv/${userLogin}/chat`;
+      return `https://kick.com/popout/${userLogin}/chat`;
   }
 
-  return `https://twitch.tv/${userLogin}`;
+  return `https://kick.com/${userLogin}`;
 }
 
 export function useHover(ref: RefObject<Element>): boolean {

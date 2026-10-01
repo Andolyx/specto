@@ -26,7 +26,7 @@ const dashAnimation = keyframes`
 `;
 
 const Wrapper = styled.svg`
-  ${tw`text-purple-500`}
+  ${tw`text-brand-700 dark:text-brand-500`}
 
   animation: ${rotateAnimation} 2s linear infinite;
 
