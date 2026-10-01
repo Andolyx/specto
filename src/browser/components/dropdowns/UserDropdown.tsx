@@ -30,17 +30,17 @@ function UserDropdown(props: UserDropdownProps) {
       {
         type: "normal",
         title: t("optionValue_openChannel"),
-        onClick: (event) => openUrl(`https://twitch.tv/${user.login}`, event),
+        onClick: (event) => openUrl(`https://kick.com/${user.login}`, event),
       },
       {
         type: "normal",
         title: t("optionValue_openChat"),
-        onClick: (event) => openUrl(`https://twitch.tv/${user.login}/chat`, event),
+        onClick: (event) => openUrl(`https://kick.com/popout/${user.login}/chat`, event),
       },
       {
         type: "normal",
         title: t("optionValue_popout"),
-        onClick: (event) => openUrl(`https://twitch.tv/${user.login}/popout`, event),
+        onClick: (event) => openUrl(`https://player.kick.com/${user.login}`, event),
       },
     );
 
@@ -106,17 +106,12 @@ function UserDropdown(props: UserDropdownProps) {
       {
         type: "normal",
         title: t("optionValue_about"),
-        onClick: (event) => openUrl(`https://twitch.tv/${user.login}/about`, event),
-      },
-      {
-        type: "normal",
-        title: t("optionValue_schedule"),
-        onClick: (event) => openUrl(`https://twitch.tv/${user.login}/schedule`, event),
+        onClick: (event) => openUrl(`https://kick.com/${user.login}/about`, event),
       },
       {
         type: "normal",
         title: t("optionValue_videos"),
-        onClick: (event) => openUrl(`https://twitch.tv/${user.login}/videos`, event),
+        onClick: (event) => openUrl(`https://kick.com/${user.login}/videos`, event),
       },
     );
 

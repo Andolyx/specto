@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Last inn mer"
   },
-  "buttonText_login": {
-    "message": "Logg inn med Twitch"
-  },
   "buttonText_reloadExtension": {
     "message": "Last inn utvidelsen igjen"
   },
@@ -87,10 +84,10 @@
     "message": "Fant ingen videoer"
   },
   "extensionDescription": {
-    "message": "Den tykkfalne kompanjongen holder deg oppdatert på Twitch"
+    "message": "Den tykkfalne kompanjongen holder deg oppdatert på Kick"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch-kompanjong"
+    "message": "Gumbo for Kick"
   },
   "inputLabel_categoryChangeNotifications": {
     "message": "Inkluder merknader om kategoriendringer"
@@ -136,9 +133,6 @@
   },
   "notificationContextMessage_accessExpired": {
     "message": "Klikk for å identitetsbekrefte"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Ditt Twitch-symbol har utløpt. Identitetsbekreft deg igjen for å få deg et nytt."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 er pålogget!"

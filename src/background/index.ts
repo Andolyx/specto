@@ -1,4 +1,4 @@
-import { get } from "es-toolkit/compat";
+import { debounce, get } from "es-toolkit/compat";
 
 import { caseString, openUrl } from "~/common/helpers";
 import { stores } from "~/common/stores";
@@ -13,9 +13,13 @@ import {
   filterNewStreams,
   getCurrentUser,
   getFollowedStreams,
+  handleUnauthorized,
+  isSessionCookie,
+  isUnauthorizedError,
+  KICK_URL,
   request,
   revoke,
-} from "./modules/twitch";
+} from "./modules/kick";
 
 async function refresh(withNotifications: boolean) {
   let currentUser: HelixUser | null = null;
@@ -27,19 +31,16 @@ async function refresh(withNotifications: boolean) {
 
   try {
     const settings = await stores.settings.get();
-    const accessToken = await stores.accessToken.get();
 
     periodInMinutes = settings.general.refreshInterval;
 
-    if (accessToken) {
-      currentUser = await getCurrentUser();
+    currentUser = await getCurrentUser();
 
-      if (currentUser) {
-        followedStreams = await getFollowedStreams(currentUser.id);
+    if (currentUser) {
+      followedStreams = await getFollowedStreams();
 
-        for (const stream of followedStreams) {
-          stream.title = caseString(stream.title, settings.streams.titleCase);
-        }
+      for (const stream of followedStreams) {
+        stream.title = caseString(stream.title, settings.streams.titleCase);
       }
 
       filteredStreams = await filterMutedStreams(followedStreams);
@@ -48,7 +49,13 @@ async function refresh(withNotifications: boolean) {
         sendStreamNotifications(await filterNewStreams(filteredStreams));
       }
     }
-  } catch {} // eslint-disable-line no-empty
+  } catch (error) {
+    if (isUnauthorizedError(error)) {
+      await handleUnauthorized();
+
+      currentUser = null;
+    }
+  }
 
   browser.alarms.create("refresh", {
     periodInMinutes,
@@ -80,7 +87,7 @@ browser.notifications.onClicked.addListener((notificationId) => {
       return authorize();
 
     case "stream":
-      return openUrl(`https://twitch.tv/${data}`);
+      return openUrl(`${KICK_URL}/${data}`);
   }
 });
 
@@ -99,18 +106,14 @@ browser.runtime.onMessage.addListener((message) => {
   return handler(...message.args);
 });
 
-browser.tabs.onUpdated.addListener((_, changeInfo) => {
-  if (!changeInfo.url?.startsWith(process.env.TWITCH_REDIRECT_URI)) {
-    return;
+const refreshSession = debounce(() => refresh(false), 2000);
+
+browser.cookies.onChanged.addListener(({ cookie }) => {
+  if (isSessionCookie(cookie)) {
+    refreshSession();
   }
-
-  const url = new URL(changeInfo.url);
-  const hash = new URLSearchParams(url.hash.substring(1));
-
-  stores.accessToken.set(hash.get("access_token"));
 });
 
-stores.accessToken.onChange(() => refresh(false));
 stores.settings.onChange(() => refresh(false));
 
 checkAlaram();

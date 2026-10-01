@@ -113,9 +113,6 @@ export class Store<T> {
 }
 
 export const stores = {
-  accessToken: new Store<string | null>("local", "accessToken", {
-    defaultValue: null,
-  }),
   currentUser: new Store<HelixUser | null>("session", "currentUser", {
     defaultValue: null,
   }),

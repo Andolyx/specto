@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Daha fazla yükle"
   },
-  "buttonText_login": {
-    "message": "Twitch ile giriş yap"
-  },
   "buttonText_reloadExtension": {
     "message": "Eklentiyi Yeniden Yükle"
   },
@@ -87,10 +84,10 @@
     "message": "Video bulunamadı"
   },
   "extensionDescription": {
-    "message": "Twitch deneyiminizi güncel tutan şişmiş arkadaşınız"
+    "message": "Kick deneyiminizi güncel tutan şişmiş arkadaşınız"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion"
+    "message": "Gumbo for Kick"
   },
   "inputLabel_categoryChangeNotifications": {
     "message": "Kategori değişikliği bildirimlerini dahil et"
@@ -136,9 +133,6 @@
   },
   "notificationContextMessage_accessExpired": {
     "message": "Yetkilendirmek için tıklayın"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Twitch erişim tokeniniz'in süresi doldu, lütfen yeni bir tane almak için yeniden yetkilendirin."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 çevrimiçi!"

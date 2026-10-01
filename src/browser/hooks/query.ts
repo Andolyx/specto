@@ -14,7 +14,6 @@ import {
   HelixResponse,
   HelixStream,
   HelixUser,
-  HelixVideo,
 } from "~/common/types";
 
 import { UseStoreOptions, useCurrentUser, useSettings } from "./store";
@@ -109,10 +108,6 @@ export function useQueryDetail<T = any>(
 
 export function useClips(params?: Dictionary<unknown> | null, config?: SWRInfiniteConfiguration) {
   return useQueryList<HelixClip>("clips", params, config);
-}
-
-export function useVideos(params?: Dictionary<unknown> | null, config?: SWRInfiniteConfiguration) {
-  return useQueryList<HelixVideo>("videos", params, config);
 }
 
 export function useStreams(params?: Dictionary<unknown> | null, config?: SWRInfiniteConfiguration) {

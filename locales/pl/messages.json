@@ -20,9 +20,6 @@
   "buttonText_loadMore": {
     "message": "Załaduj więcej"
   },
-  "buttonText_login": {
-    "message": "Zaloguj za pomocą Twitch"
-  },
   "buttonText_reloadExtension": {
     "message": "Wczytaj ponownie rozszerzenie"
   },
@@ -105,10 +102,10 @@
     "message": "Nie znaleziono filmów"
   },
   "extensionDescription": {
-    "message": "Świetny towarzysz, dzięki któremu będziesz na bieżąco z Twitchem"
+    "message": "Świetny towarzysz, dzięki któremu będziesz na bieżąco z Kickem"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "Przykład: $1"
@@ -163,9 +160,6 @@
   },
   "notificationContextMessage_extensionUpdated": {
     "message": "Kliknij by zobaczyć zmiany"
-  },
-  "notificationMessage_accessExpired": {
-    "message": "Twój token dostępu Twitch wygasł, proszę ponownie autoryzuj, aby otrzymać nowy."
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumbo został zaktualizowany do wersji $1."

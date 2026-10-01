@@ -21,7 +21,7 @@
     "message": "Load More"
   },
   "buttonText_login": {
-    "message": "Login with Twitch"
+    "message": "Log in on Kick"
   },
   "buttonText_reloadExtension": {
     "message": "Reload Extension"
@@ -58,6 +58,9 @@
   },
   "confirmTitle_reset": {
     "message": "You are about to reset Gumbo!"
+  },
+  "detailText_followerCount": {
+    "message": "$1 followers"
   },
   "detailText_followingSince": {
     "message": "Following since $1"
@@ -105,10 +108,10 @@
     "message": "No videos found"
   },
   "extensionDescription": {
-    "message": "Swollen companion keeping you updated on your Twitch experience"
+    "message": "Swollen companion keeping you updated on your Kick experience"
   },
   "extensionName": {
-    "message": "Gumbo: Twitch Companion"
+    "message": "Gumbo for Kick"
   },
   "helpText_customAction_url": {
     "message": "Example: $1"
@@ -171,7 +174,7 @@
     "message": "Click to view changes"
   },
   "notificationMessage_accessExpired": {
-    "message": "Your Twitch access token expired, please re-authorize to get a new one."
+    "message": "Your Kick session expired, please log in on kick.com again."
   },
   "notificationMessage_extensionUpdated": {
     "message": "Gumbo as been updated to version $1."
@@ -356,9 +359,6 @@
   "optionValue_update": {
     "message": "Update"
   },
-  "optionValue_videos": {
-    "message": "Videos"
-  },
   "optionValue_videoType_all": {
     "message": "All videos"
   },
@@ -370,6 +370,9 @@
   },
   "optionValue_videoType_upload": {
     "message": "Uploads"
+  },
+  "optionValue_videos": {
+    "message": "Videos"
   },
   "placeholderText_ignoredCategories": {
     "message": "Input a category to ignore"

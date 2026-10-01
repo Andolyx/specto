@@ -45,7 +45,7 @@ const LinkList = styled.div`
 `;
 
 const Tab = styled(NavLink)`
-  ${tw`border-b border-neutral-200 flex-1 py-3 relative text-center text-neutral-600 dark:(border-neutral-800 text-neutral-400) [&.active]:(border-purple-500 font-medium text-black dark:text-white)!`}
+  ${tw`border-b border-neutral-200 flex-1 py-3 relative text-center text-neutral-600 dark:(border-neutral-800 text-neutral-400) [&.active]:(border-brand-500 font-medium text-black dark:text-white)!`}
 `;
 
 export interface CategoryTitleProps {
@@ -75,8 +75,8 @@ function CategoryTitle(props: CategoryTitleProps) {
         <Name>{category.name}</Name>
 
         <LinkList>
-          <ExternalAnchor to={`https://twitch.tv/directory/game/${category.name}`}>
-            {t("buttonText_viewOn", "Twitch")}
+          <ExternalAnchor to={`https://kick.com/category/${category.id}`}>
+            {t("buttonText_viewOn", "Kick")}
           </ExternalAnchor>
 
           {category.igdbId && (
@@ -89,7 +89,6 @@ function CategoryTitle(props: CategoryTitleProps) {
 
       <TabList>
         <Tab to="streams">{t("titleText_streams")}</Tab>
-        <Tab to="videos">{t("titleText_videos")}</Tab>
         <Tab to="clips">{t("titleText_clips")}</Tab>
       </TabList>
     </Wrapper>

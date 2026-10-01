@@ -36,10 +36,6 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      new rspack.EnvironmentPlugin({
-        TWITCH_CLIENT_ID: undefined,
-        TWITCH_REDIRECT_URI: undefined,
-      }),
       new rspack.ProvidePlugin({
         browser: "webextension-polyfill",
       }),
