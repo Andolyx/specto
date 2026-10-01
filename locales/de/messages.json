@@ -51,10 +51,10 @@
     "message": "Löschen bestätigen"
   },
   "confirmTitle_reload": {
-    "message": "Uff, Gumbo reagiert nicht mehr!"
+    "message": "Uff, Specto reagiert nicht mehr!"
   },
   "confirmTitle_reset": {
-    "message": "Gumbo wird zurückgesetzt!"
+    "message": "Specto wird zurückgesetzt!"
   },
   "detailText_followingSince": {
     "message": "Folgt seit $1"
@@ -105,7 +105,7 @@
     "message": "Dein treuer Begleiter, der dich über Live-Streams auf dem Laufenden hält."
   },
   "extensionName": {
-    "message": "Gumbo for Kick"
+    "message": "Specto"
   },
   "helpText_customAction_url": {
     "message": "Beispiel: $1"
@@ -147,7 +147,7 @@
     "message": "Übersetzen"
   },
   "messageText_donate": {
-    "message": "<p>Gumbo ist kostenlos und sammelt oder verkauft keine Nutzerdaten.</p><p>Spenden sind optional, aber sehr willkommen – sie unterstützen meine Arbeit und motivieren mich, die Erweiterung weiter zu verbessern.</p><p>Vielen Dank für deinen Support!</p>"
+    "message": "<p>Specto ist kostenlos und sammelt oder verkauft keine Nutzerdaten.</p><p>Spenden sind optional, aber sehr willkommen – sie unterstützen meine Arbeit und motivieren mich, die Erweiterung weiter zu verbessern.</p><p>Vielen Dank für deinen Support!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Kategorien durchsuchen..."
@@ -162,7 +162,7 @@
     "message": "Klicken für Änderungen"
   },
   "notificationMessage_extensionUpdated": {
-    "message": "Gumbo wurde auf Version $1 aktualisiert."
+    "message": "Specto wurde auf Version $1 aktualisiert."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 ist jetzt live!"

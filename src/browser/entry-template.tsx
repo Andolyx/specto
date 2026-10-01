@@ -64,7 +64,7 @@ const wrapper: EntryWrapper<ExoticComponent> = (Component) => {
               ${tw`absolute z-50`}
             }
 
-            .os-theme-gumbo {
+            .os-theme-specto {
               --os-handle-bg-active: ${theme("colors.brand.600")};
               --os-handle-bg-hover: ${theme("colors.brand.400")};
               --os-handle-bg: ${theme("colors.brand.500")};

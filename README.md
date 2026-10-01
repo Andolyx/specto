@@ -1,6 +1,8 @@
-# <img src="public/icon-48.png" width="38" align="left" /> Gumbo for Kick
+# <img src="public/icon-48.png" width="38" align="left" /> Specto
 
-> A fork of [Gumbo](https://github.com/Seldszar/Gumbo) by Seldszar, adapted for [Kick](https://kick.com).
+> Your lookout for live streams on [Kick](https://kick.com). Based on [Gumbo](https://github.com/Seldszar/Gumbo) by Seldszar.
+
+*Specto* is Latin for "I watch."
 
 Check your followed Kick channels and live streams, browse popular streams and categories, search channels and categories, and get notified when a channel goes live or changes category — all from the browser toolbar.
 

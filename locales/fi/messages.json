@@ -51,10 +51,10 @@
     "message": "Vahvista poisto"
   },
   "confirmTitle_reload": {
-    "message": "Oh-oh, Gumbo ei vastaa!"
+    "message": "Oh-oh, Specto ei vastaa!"
   },
   "confirmTitle_reset": {
-    "message": "Olet nollaamassa Gumbon!"
+    "message": "Olet nollaamassa Specton!"
   },
   "detailText_followingSince": {
     "message": "Saurannut $1 lähtien"
@@ -105,7 +105,7 @@
     "message": "Leppoinen Kick apurisi, joka pitää sinut ajan tasalla"
   },
   "extensionName": {
-    "message": "Gumbo for Kick"
+    "message": "Specto"
   },
   "helpText_customAction_url": {
     "message": "Esimerkki: $1"
@@ -147,7 +147,7 @@
     "message": "Käännä"
   },
   "messageText_donate": {
-    "message": "<p>Gumbo on ilmainen laajennus, joka ei kerää tai myy henkilökohtaisia käyttäjätietoja.</p><p>Lahjoitukset ovat valinnaisia, mutta niitä arvostetaan suuresti, ne auttavat tukemaan työtäni ja auttavat minua tarjoamaan mahdollisimman hyvää tuotetta.</p> p><p>Kiitos tuestanne!</p>"
+    "message": "<p>Specto on ilmainen laajennus, joka ei kerää tai myy henkilökohtaisia käyttäjätietoja.</p><p>Lahjoitukset ovat valinnaisia, mutta niitä arvostetaan suuresti, ne auttavat tukemaan työtäni ja auttavat minua tarjoamaan mahdollisimman hyvää tuotetta.</p> p><p>Kiitos tuestanne!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Kirjoita kategorian etsimiseksi"
@@ -162,7 +162,7 @@
     "message": "Klikkaa nähdäksesi muutokset"
   },
   "notificationMessage_extensionUpdated": {
-    "message": "Gumbo päivitetty versioon $1."
+    "message": "Specto päivitetty versioon $1."
   },
   "notificationMessage_streamOnline": {
     "message": "$1 on paikalla!"

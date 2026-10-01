@@ -12,15 +12,15 @@ import Section from "../Section";
 const allLinks = [
   {
     title: t("linkText_repository"),
-    url: "https://github.com/Andolyx/gumbo-kick",
+    url: "https://github.com/Andolyx/specto",
   },
   {
     title: t("linkText_issues"),
-    url: "https://github.com/Andolyx/gumbo-kick/issues",
+    url: "https://github.com/Andolyx/specto/issues",
   },
   {
     title: t("linkText_releases"),
-    url: "https://github.com/Andolyx/gumbo-kick/releases",
+    url: "https://github.com/Andolyx/specto/releases",
   },
   {
     title: "Original Gumbo",
