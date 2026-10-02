@@ -1,0 +1,51 @@
+name: Upstream Sync PR
+
+on:
+  push:
+    branches:
+      - claude/upstream-sync-*
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open:
+    name: Open PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # The weekly routine can push branches but can't call the GitHub API, so the PR is
+      # opened here from the sync merge commit: its subject is the title, its body the report.
+      - name: Open PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "A PR is already open for $BRANCH."
+            exit 0
+          fi
+
+          commit=$(git log --merges -1 --format=%H "origin/main..HEAD")
+
+          if [ -z "$commit" ]; then
+            commit=$(git rev-parse HEAD)
+          fi
+
+          git log -1 --format=%b "$commit" > body.md
+
+          draft=()
+
+          if grep -qi '^Draft: yes' body.md; then
+            draft=(--draft)
+          fi
+
+          gh pr create --base main --head "$BRANCH" "${draft[@]}" \
+            --title "$(git log -1 --format=%s "$commit")" \
+            --body-file body.md
