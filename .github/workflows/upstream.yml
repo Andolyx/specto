@@ -1,0 +1,67 @@
+name: Upstream
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  UPSTREAM_REPO: Seldszar/Gumbo
+  ISSUE_TITLE: Upstream changes from Gumbo
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compare
+        id: compare
+        run: |
+          git remote add upstream "https://github.com/$UPSTREAM_REPO.git"
+          git fetch --quiet upstream main
+
+          read -r behind ahead < <(git rev-list --left-right --count upstream/main...HEAD)
+
+          echo "behind=$behind" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "Specto is **$behind commits behind** and **$ahead commits ahead** of [$UPSTREAM_REPO](https://github.com/$UPSTREAM_REPO)."
+            echo
+
+            if [ "$behind" -gt 0 ]; then
+              echo "### New upstream commits"
+              echo
+              git log --reverse --no-merges --format="- [\`%h\`](https://github.com/$UPSTREAM_REPO/commit/%H) %s (%as)" HEAD..upstream/main
+              echo
+              echo "Merge them with \`git fetch upstream && git merge upstream/main\`, porting any Twitch-specific changes to \`src/background/modules/kick.ts\`."
+            fi
+          } > report.md
+
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Update Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BEHIND: ${{ steps.compare.outputs.behind }}
+        run: |
+          number=$(gh issue list --state open --search "in:title \"$ISSUE_TITLE\"" --json number,title --jq "map(select(.title == \"$ISSUE_TITLE\")) | .[0].number // empty")
+
+          if [ "$BEHIND" -gt 0 ]; then
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file report.md
+            else
+              gh issue create --title "$ISSUE_TITLE" --body-file report.md
+            fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "Specto is up to date with $UPSTREAM_REPO."
+          fi
