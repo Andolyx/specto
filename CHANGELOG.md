@@ -5,7 +5,7 @@
 
 ### Bug Fixes
 
-* update translations ([#249](https://github.com/Andolyx/specto/issues/249)) ([1e0cddc](https://github.com/Andolyx/specto/commit/1e0cddc4c53f930df4b441a9be0009c68adc9522))
+* update translations ([Gumbo#249](https://github.com/Seldszar/Gumbo/pull/249)) ([1e0cddc](https://github.com/Andolyx/specto/commit/1e0cddc4c53f930df4b441a9be0009c68adc9522))
 
 ## 1.0.0 (2026-10-01)
 
