@@ -1,7 +1,8 @@
 name: Test
 
+# Every PR branch lives in this private repo, so push runs already cover PRs. A pull_request
+# trigger would only duplicate them, and is held for approval on PRs opened by github-actions.
 on:
-  - pull_request
   - push
 
 jobs:
