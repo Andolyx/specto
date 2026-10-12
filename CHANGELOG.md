@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Andolyx/specto/compare/v1.0.0...v1.0.1) (2026-10-12)
+
+
+### Bug Fixes
+
+* update translations ([#249](https://github.com/Andolyx/specto/issues/249)) ([1e0cddc](https://github.com/Andolyx/specto/commit/1e0cddc4c53f930df4b441a9be0009c68adc9522))
+
 ## 1.0.0 (2026-10-01)
 
 
