@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -16,6 +18,8 @@ jobs:
 
     outputs:
       created: ${{ steps.release.outputs.release_created }}
+      pr: ${{ steps.release.outputs.pr }}
+      prs_created: ${{ steps.release.outputs.prs_created }}
       version: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
       tag_name: ${{ steps.release.outputs.tag_name }}
 
@@ -23,6 +27,51 @@ jobs:
       - id: release
         name: Release
         uses: googleapis/release-please-action@v4
+
+  # Releases are hands-free: fix upstream references in the release PR, merge it, and run this
+  # workflow again so release-please tags the release. Merges made with GITHUB_TOKEN don't
+  # trigger workflows on their own.
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    needs:
+      - release-please
+
+    if: needs.release-please.outputs.prs_created == 'true'
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR_NUMBER: ${{ fromJSON(needs.release-please.outputs.pr).number }}
+      UPSTREAM_REPOSITORY: Seldszar/Gumbo
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ fromJSON(needs.release-please.outputs.pr).headBranchName }}
+          fetch-depth: 0
+
+      - name: Fix Upstream References
+        run: |
+          git remote add upstream "https://github.com/$UPSTREAM_REPOSITORY.git"
+          git fetch --quiet upstream main
+
+          gh pr view "$PR_NUMBER" --json body --jq .body > body.md
+          python3 .github/scripts/link-upstream-refs.py CHANGELOG.md body.md
+          gh pr edit "$PR_NUMBER" --body-file body.md
+
+          if ! git diff --quiet CHANGELOG.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -qm "chore: link upstream references in changelog" CHANGELOG.md
+            git push
+          fi
+
+      - name: Merge
+        run: |
+          gh pr merge "$PR_NUMBER" --merge
+          gh workflow run release.yml --ref main
 
   submit:
     name: Submit
