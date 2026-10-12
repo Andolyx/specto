@@ -6,12 +6,13 @@ on:
       - claude/upstream-sync-*
 
 permissions:
-  contents: read
+  actions: write
+  contents: write
   pull-requests: write
 
 jobs:
-  open:
-    name: Open PR
+  sync:
+    name: Open and Merge
     runs-on: ubuntu-latest
 
     steps:
@@ -23,15 +24,11 @@ jobs:
       # The weekly routine can push branches but can't call the GitHub API, so the PR is
       # opened here from the sync merge commit: its subject is the title, its body the report.
       - name: Open PR
+        id: pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ github.ref_name }}
         run: |
-          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
-            echo "A PR is already open for $BRANCH."
-            exit 0
-          fi
-
           commit=$(git log --merges -1 --format=%H "origin/main..HEAD")
 
           if [ -z "$commit" ]; then
@@ -40,12 +37,41 @@ jobs:
 
           git log -1 --format=%b "$commit" > body.md
 
-          draft=()
+          draft=false
 
           if grep -qi '^Draft: yes' body.md; then
-            draft=(--draft)
+            draft=true
           fi
 
-          gh pr create --base main --head "$BRANCH" "${draft[@]}" \
-            --title "$(git log -1 --format=%s "$commit")" \
-            --body-file body.md
+          echo "draft=$draft" >> "$GITHUB_OUTPUT"
+
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "A PR is already open for $BRANCH."
+            exit 0
+          fi
+
+          args=(--base main --head "$BRANCH" --title "$(git log -1 --format=%s "$commit")" --body-file body.md)
+
+          if [ "$draft" = true ]; then
+            args+=(--draft)
+          fi
+
+          gh pr create "${args[@]}"
+
+      - name: Install
+        if: steps.pr.outputs.draft == 'false'
+        run: yarn install --frozen-lockfile
+
+      - name: Test
+        if: steps.pr.outputs.draft == 'false'
+        run: yarn test && yarn build:chrome && yarn build:firefox
+
+      # Merges made with GITHUB_TOKEN don't trigger workflows, so the release is started explicitly.
+      - name: Merge
+        if: steps.pr.outputs.draft == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          gh pr merge "$BRANCH" --merge --delete-branch
+          gh workflow run release.yml --ref main
