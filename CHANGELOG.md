@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/Andolyx/specto/compare/v1.0.1...v1.1.0) (2026-10-13)
+
+
+### Features
+
+* accept donations through Stripe ([13d9b3b](https://github.com/Andolyx/specto/commit/13d9b3b9f95941f67a57371dd4b494cfde1f2027))
+* accept donations through Stripe ([d59dc72](https://github.com/Andolyx/specto/commit/d59dc7253dd077f63b75f1106a17611dfd7477d5))
+
 ## [1.0.1](https://github.com/Andolyx/specto/compare/v1.0.0...v1.0.1) (2026-10-12)
 
 
