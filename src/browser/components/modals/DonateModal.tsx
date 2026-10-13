@@ -1,4 +1,4 @@
-import { IconBrandCoinbase, IconBrandPaypal } from "@tabler/icons-react";
+import { IconBrandStripe } from "@tabler/icons-react";
 import { MouseEventHandler } from "react";
 import tw, { styled } from "twin.macro";
 
@@ -13,14 +13,9 @@ import Section from "../Section";
 
 const allDonateButtons = [
   {
-    name: "PayPal",
-    url: "https://go.seldszar.fr/paypal",
-    icon: <IconBrandPaypal size="1.5rem" strokeWidth={1.5} />,
-  },
-  {
-    name: "Coinbase",
-    url: "https://go.seldszar.fr/coinbase",
-    icon: <IconBrandCoinbase size="1.5rem" strokeWidth={1.5} />,
+    name: "Stripe",
+    url: "https://buy.stripe.com/3cIbJ3gR50Nw7Mj3WfgQE00",
+    icon: <IconBrandStripe size="1.5rem" strokeWidth={1.5} />,
   },
 ];
 
