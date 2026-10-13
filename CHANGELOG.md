@@ -6,7 +6,6 @@
 ### Bug Fixes
 
 * show Andolyx as the maintainer in About ([5173fbf](https://github.com/Andolyx/specto/commit/5173fbf3c16eedc49f02f04377bf61f70fa54586))
-* show Andolyx as the maintainer in About ([3f320c7](https://github.com/Andolyx/specto/commit/3f320c7fc722cd101b9c402c714cb342f616d7ec))
 
 ## [1.1.0](https://github.com/Andolyx/specto/compare/v1.0.1...v1.1.0) (2026-10-13)
 
