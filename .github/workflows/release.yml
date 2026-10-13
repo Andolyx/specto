@@ -83,7 +83,7 @@ jobs:
           PR_NUMBER: ${{ steps.pr.outputs.number }}
         run: |
           gh api -X PUT "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge" -f merge_method=merge > /dev/null
-          gh workflow run release.yml --ref main
+          gh workflow run release.yml --ref main --repo "$GITHUB_REPOSITORY"
 
   submit:
     name: Submit
