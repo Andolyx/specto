@@ -74,4 +74,4 @@ jobs:
           BRANCH: ${{ github.ref_name }}
         run: |
           gh pr merge "$BRANCH" --merge --delete-branch
-          gh workflow run release.yml --ref main
+          gh workflow run release.yml --ref main --repo "$GITHUB_REPOSITORY"
