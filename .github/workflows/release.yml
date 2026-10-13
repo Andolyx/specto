@@ -82,8 +82,23 @@ jobs:
         env:
           PR_NUMBER: ${{ steps.pr.outputs.number }}
         run: |
-          gh api -X PUT "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge" -f merge_method=merge > /dev/null
-          gh workflow run release.yml --ref main --repo "$GITHUB_REPOSITORY"
+          # Wait for the PR to reflect a tidy-up push before merging, or GitHub answers
+          # "Head branch is out of date" (409).
+          sha=$(git rev-parse HEAD)
+
+          for attempt in 1 2 3 4 5 6; do
+            head=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq .head.sha)
+
+            if [ "$head" = "$sha" ] && gh api -X PUT "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge" -f merge_method=merge -f sha="$sha" > /dev/null; then
+              gh workflow run release.yml --ref main --repo "$GITHUB_REPOSITORY"
+              exit 0
+            fi
+
+            sleep $((attempt * 5))
+          done
+
+          echo "::error::Could not merge release PR #$PR_NUMBER"
+          exit 1
 
   submit:
     name: Submit
