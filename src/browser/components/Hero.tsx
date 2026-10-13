@@ -15,8 +15,12 @@ const StyledWordmark = styled(Wordmark)`
   ${tw`mb-1 w-36`}
 `;
 
+const Maintainer = styled.div`
+  ${tw`font-medium text-sm`}
+`;
+
 const Author = styled.div`
-  ${tw`mb-4 text-center text-sm [&_a]:hover:underline`}
+  ${tw`mb-4 text-center text-neutral-600 text-xs dark:text-neutral-200 [&_a]:hover:underline`}
 `;
 
 const Description = styled.div`
@@ -34,6 +38,7 @@ function Hero(props: HeroProps) {
     <Wrapper className={props.className}>
       <StyledLogo />
       <StyledWordmark />
+      <Maintainer>Maintained by Andolyx</Maintainer>
       <Author>
         based on{" "}
         <a href="https://github.com/Seldszar/Gumbo" target="_blank" rel="noopener noreferrer">
