@@ -1,8 +1,9 @@
-"""Point issue/PR references of upstream commits at the upstream repository.
+"""Tidy release-please changelog entries in place, for each file given as an argument.
 
-release-please links every "#123" in the changelog to this repository's issues, but for
-commits merged from upstream the number refers to an upstream pull request. Each file
-given as an argument is rewritten in place.
+- release-please links every "#123" to this repository's issues, but for commits merged from
+  upstream the number refers to an upstream pull request, so those links are repointed.
+- Merge commits repeat their pull request's title, so release-please lists the same change
+  twice; repeated entries within a version section are dropped.
 """
 
 import os
@@ -37,14 +38,38 @@ def fix_line(line: str) -> str:
     )
 
 
+ENTRY = re.compile(r"^\* (.+?) \(\[")
+
+
+def tidy(text: str) -> str:
+    lines = []
+    seen = set()
+
+    for line in text.splitlines(keepends=True):
+        if line.startswith("## "):
+            seen = set()
+
+        entry = ENTRY.match(line)
+
+        if entry:
+            if entry.group(1) in seen:
+                continue
+
+            seen.add(entry.group(1))
+
+        lines.append(fix_line(line))
+
+    return "".join(lines)
+
+
 for path in sys.argv[1:]:
     with open(path, encoding="utf-8") as file:
         text = file.read()
 
-    fixed = "".join(fix_line(line) for line in text.splitlines(keepends=True))
+    fixed = tidy(text)
 
     if fixed != text:
         with open(path, "w", encoding="utf-8") as file:
             file.write(fixed)
 
-        print(f"Fixed upstream references in {path}")
+        print(f"Tidied {path}")

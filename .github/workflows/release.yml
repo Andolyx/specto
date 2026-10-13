@@ -26,7 +26,7 @@ jobs:
         name: Release
         uses: googleapis/release-please-action@v4
 
-  # Releases are hands-free: fix upstream references in the open release PR, merge it, and run
+  # Releases are hands-free: tidy the changelog in the open release PR, merge it, and run
   # this workflow again so release-please tags the release. Merges made with GITHUB_TOKEN don't
   # trigger workflows on their own. The PR is looked up rather than taken from release-please's
   # outputs, so a release PR left open by an earlier run is picked up too.
@@ -58,7 +58,7 @@ jobs:
           ref: ${{ env.RELEASE_BRANCH }}
           fetch-depth: 0
 
-      - name: Fix Upstream References
+      - name: Tidy Changelog
         if: steps.pr.outputs.number != ''
         env:
           PR_NUMBER: ${{ steps.pr.outputs.number }}
@@ -67,13 +67,13 @@ jobs:
           git fetch --quiet upstream main
 
           gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq .body > body.md
-          python3 .github/scripts/link-upstream-refs.py CHANGELOG.md body.md
+          python3 .github/scripts/tidy-changelog.py CHANGELOG.md body.md
           gh api -X PATCH "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" -F body=@body.md > /dev/null
 
           if ! git diff --quiet CHANGELOG.md; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -qm "chore: link upstream references in changelog" CHANGELOG.md
+            git commit -qm "chore: tidy changelog" CHANGELOG.md
             git push
           fi
 
