@@ -6,6 +6,12 @@
 
 Check your followed Kick channels and live streams, browse popular streams and categories, search channels and categories, and get notified when a channel goes live or changes category — all from the browser toolbar.
 
+## Install
+
+[link-chrome]: https://chromewebstore.google.com/detail/specto/modahpmjlobedjbfbdiaoagfjhdakbap 'Version published on Chrome Web Store'
+
+[<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome.svg" width="48" alt="Chrome" valign="middle">][link-chrome] [<img valign="middle" src="https://img.shields.io/chrome-web-store/v/modahpmjlobedjbfbdiaoagfjhdakbap.svg?label=%20">][link-chrome] also compatible with [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg" width="24" alt="Edge" valign="middle">][link-chrome] [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera.svg" width="24" alt="Opera" valign="middle">][link-chrome]
+
 ## How it works
 
 Kick's [public API](https://docs.kick.com/) has no endpoint for a user's follows, and every token requires a client secret, which can't be shipped in an extension. Instead, this extension uses the private API that the kick.com website itself uses:
