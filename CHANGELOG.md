@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/Andolyx/specto/compare/v1.1.1...v1.1.2) (2026-10-14)
+
+
+### Bug Fixes
+
+* replace Gumbo's tagline in translated extension descriptions ([1195b2e](https://github.com/Andolyx/specto/commit/1195b2e3af96a50e66052f9b8ce7903ab70dcf22))
+
 ## [1.1.1](https://github.com/Andolyx/specto/compare/v1.1.0...v1.1.1) (2026-10-13)
 
 
