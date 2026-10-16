@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/Andolyx/specto/compare/v1.1.2...v1.1.3) (2026-10-16)
+
+
+### Bug Fixes
+
+* rewrite the donate message for Specto ([e7c3997](https://github.com/Andolyx/specto/commit/e7c3997c58f0744f36d04d7ec39c912bd7c00b6c))
+* rewrite the donate message for Specto ([549f407](https://github.com/Andolyx/specto/commit/549f4070b88ce1497983c38cd8154a98563ce2fd))
+
 ## [1.1.2](https://github.com/Andolyx/specto/compare/v1.1.1...v1.1.2) (2026-10-14)
 
 
