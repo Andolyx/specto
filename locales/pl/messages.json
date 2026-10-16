@@ -147,7 +147,7 @@
     "message": "Przetłumacz"
   },
   "messageText_donate": {
-    "message": "<p>Specto to bezpłatne rozszerzenie, które nie gromadzi ani nie sprzedaje osobistych danych użytkownika.</p><p>Darowizny, chociaż opcjonalne, ale bardzo cenione, pomagają wesprzeć moją pracę i zachęcają mnie do oferowania produktów najlepszej możliwej jakości.</p><p>Dziękujemy za wsparcie!</p>"
+    "message": "<p>Specto jest darmowe i nigdy nie zbiera ani nie sprzedaje Twoich danych. Jeśli jest dla Ciebie przydatne, darowizna pomaga utrzymać je w działaniu, gdy Kick się zmienia. Dziękujemy!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Zacznij pisać, aby wyszukać kategorie"

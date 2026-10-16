@@ -123,7 +123,7 @@
     "message": "Çeviri"
   },
   "messageText_donate": {
-    "message": "<p>Specto, kişisel kullanıcı verilerini toplamayan ve satmayan ücretsiz bir eklentidir.</p><p>Bağışlar, isteğe bağlı olsa da büyük ölçüde değerlendirilir ve çalışmalarımı desteklememe ve mümkün olan en iyi kaliteli ürünler sunmama yardımcı olur.</p><p>Desteğiniz için teşekkür ederim!</p>"
+    "message": "<p>Specto ücretsizdir ve verilerinizi asla toplamaz veya satmaz. İşinize yarıyorsa, bir bağış Kick değiştikçe Specto'nun çalışmaya devam etmesine yardımcı olur. Teşekkürler!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Kategorileri aramak için yazmaya başlayın"

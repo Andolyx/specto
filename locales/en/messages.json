@@ -159,7 +159,7 @@
     "message": "Translate"
   },
   "messageText_donate": {
-    "message": "<p>Specto is a free extension that does not collect or sell personal user data.</p><p>Donations, although optional but greatly appreciated, help support my work and encourage me to offer the best quality products possible.</p><p>Thank you for your support!</p>"
+    "message": "<p>Specto is free and never collects or sells your data. If it's useful to you, a donation helps keep it working as Kick changes. Thank you!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Start typing to search categories"
