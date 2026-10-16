@@ -147,7 +147,7 @@
     "message": "Übersetzen"
   },
   "messageText_donate": {
-    "message": "<p>Specto ist kostenlos und sammelt oder verkauft keine Nutzerdaten.</p><p>Spenden sind optional, aber sehr willkommen – sie unterstützen meine Arbeit und motivieren mich, die Erweiterung weiter zu verbessern.</p><p>Vielen Dank für deinen Support!</p>"
+    "message": "<p>Specto ist kostenlos und sammelt oder verkauft niemals deine Daten. Wenn es dir nützt, hilft eine Spende dabei, Specto funktionsfähig zu halten, während sich Kick verändert. Danke!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Kategorien durchsuchen..."

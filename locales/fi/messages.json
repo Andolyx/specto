@@ -147,7 +147,7 @@
     "message": "Käännä"
   },
   "messageText_donate": {
-    "message": "<p>Specto on ilmainen laajennus, joka ei kerää tai myy henkilökohtaisia käyttäjätietoja.</p><p>Lahjoitukset ovat valinnaisia, mutta niitä arvostetaan suuresti, ne auttavat tukemaan työtäni ja auttavat minua tarjoamaan mahdollisimman hyvää tuotetta.</p> p><p>Kiitos tuestanne!</p>"
+    "message": "<p>Specto on ilmainen eikä koskaan kerää tai myy tietojasi. Jos siitä on sinulle hyötyä, lahjoitus auttaa pitämään sen toimivana Kickin muuttuessa. Kiitos!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Kirjoita kategorian etsimiseksi"

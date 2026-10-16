@@ -147,7 +147,7 @@
     "message": "Traduzir"
   },
   "messageText_donate": {
-    "message": "<p>Specto é uma extensão grátis que não coleta e não vende as informações pessoais dos usuários.</p><p>Doações, embora opcionais, são muito apreciadas, pois apoiam o meu trabalho e me encorajam a oferecer a melhor qualidade possível em meus produtos.</p><p>Obrigado por seu suporte!</p>"
+    "message": "<p>O Specto é gratuito e nunca coleta nem vende seus dados. Se ele for útil para você, uma doação ajuda a mantê-lo funcionando conforme o Kick muda. Obrigado!</p>"
   },
   "messageText_typeSearchCategories": {
     "message": "Comece digitando para buscar categorias"
